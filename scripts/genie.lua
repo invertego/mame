@@ -468,6 +468,7 @@ configurations {
 platforms {
 	"x32",
 	"x64",
+	"arm64",
 	"Native", -- for targets where bitness is not specified
 }
 
@@ -575,7 +576,7 @@ end
 if (_ACTION == nil) then return false end
 
 -- define PTR64 if we are a 64-bit target
-configuration { "x64 or android-*64"}
+configuration { "x64 or arm64 or android-*64"}
 	defines { "PTR64=1" }
 
 -- define MAME_DEBUG if we are a debugging build

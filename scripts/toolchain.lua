@@ -259,6 +259,16 @@ function toolchain(_buildDir, _subDir)
 	configuration { "x64", "vs*", "Debug" }
 		targetdir (_buildDir .. _ACTION .. "/bin/x64/Debug")
 
+	configuration { "arm64", "vs*" }
+		defines { "_WIN64" }
+		objdir (_buildDir .. _ACTION .. "/obj")
+
+	configuration { "arm64", "vs*", "Release" }
+		targetdir (_buildDir .. _ACTION .. "/bin/ARM64/Release")
+
+	configuration { "arm64", "vs*", "Debug" }
+		targetdir (_buildDir .. _ACTION .. "/bin/ARM64/Debug")
+
 	configuration { "x32", "vs*-clang" }
 		objdir (_buildDir .. _ACTION .. "-clang/obj")
 
