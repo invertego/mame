@@ -40,6 +40,13 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <stdint.h>
 
 /*----------------------------------------------------------------------------
+| Work around naming conflicts with arm(64)_neon.h
+| https://github.com/ucb-bar/berkeley-softfloat-3/issues/12
+*----------------------------------------------------------------------------*/
+#define float32_t softfloat_float32_t
+#define float64_t softfloat_float64_t
+
+/*----------------------------------------------------------------------------
 | Types used to pass 16-bit, 32-bit, 64-bit, and 128-bit floating-point
 | arguments and results to/from functions.  These types must be exactly
 | 16 bits, 32 bits, 64 bits, and 128 bits in size, respectively.  Where a
